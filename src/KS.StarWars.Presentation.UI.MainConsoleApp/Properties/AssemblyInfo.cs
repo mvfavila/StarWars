@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("StarWars.Presentation.UI.Console")]
+[assembly: AssemblyTitle("KS.StarWars.Presentation.UI.MainConsoleApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("StarWars.Presentation.UI.Console")]
+[assembly: AssemblyProduct("KS.StarWars.Presentation.UI.MainConsoleApp")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("97fe4aaa-1029-4f94-a8f1-796e5f062ff4")]
+[assembly: Guid("45a3be37-e3da-4a83-9099-c12e07c9c352")]
 
 // Version information for an assembly consists of the following four values:
 //

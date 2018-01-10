@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{97FE4AAA-1029-4F94-A8F1-796E5F062FF4}</ProjectGuid>
+    <ProjectGuid>{45A3BE37-E3DA-4A83-9099-C12E07C9C352}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>StarWars.Presentation.UI.Console</RootNamespace>
-    <AssemblyName>StarWars.Presentation.UI.Console</AssemblyName>
+    <RootNamespace>KS.StarWars.Presentation.UI.MainConsoleApp</RootNamespace>
+    <AssemblyName>KS.StarWars.Presentation.UI.MainConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

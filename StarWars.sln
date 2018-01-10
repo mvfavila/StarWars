@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{98625820-5F66-48BE-8969-597AD21B7047}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{D1854770-29FB-4A7E-B832-1F2EEDFD4786}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars.Presentation.UI.Console", "src\StarWars.Presentation.UI.Console\StarWars.Presentation.UI.Console.csproj", "{97FE4AAA-1029-4F94-A8F1-796E5F062FF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.StarWars.Presentation.UI.MainConsoleApp", "src\KS.StarWars.Presentation.UI.MainConsoleApp\KS.StarWars.Presentation.UI.MainConsoleApp.csproj", "{45A3BE37-E3DA-4A83-9099-C12E07C9C352}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,18 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{97FE4AAA-1029-4F94-A8F1-796E5F062FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97FE4AAA-1029-4F94-A8F1-796E5F062FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97FE4AAA-1029-4F94-A8F1-796E5F062FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97FE4AAA-1029-4F94-A8F1-796E5F062FF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A3BE37-E3DA-4A83-9099-C12E07C9C352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A3BE37-E3DA-4A83-9099-C12E07C9C352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A3BE37-E3DA-4A83-9099-C12E07C9C352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A3BE37-E3DA-4A83-9099-C12E07C9C352}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{97FE4AAA-1029-4F94-A8F1-796E5F062FF4} = {98625820-5F66-48BE-8969-597AD21B7047}
+		{45A3BE37-E3DA-4A83-9099-C12E07C9C352} = {D1854770-29FB-4A7E-B832-1F2EEDFD4786}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9EEA927A-2BD4-40B3-8C29-E324F221D275}
+		SolutionGuid = {80EDF3A7-8AD4-4516-976F-E932AAABC1EA}
 	EndGlobalSection
 EndGlobal
