@@ -7,6 +7,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Pre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.StarWars.Presentation.UI.MainConsoleApp", "src\KS.StarWars.Presentation.UI.MainConsoleApp\KS.StarWars.Presentation.UI.MainConsoleApp.csproj", "{45A3BE37-E3DA-4A83-9099-C12E07C9C352}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{546C781F-26EF-4E70-8E42-28CA967FE973}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{5B68F598-7F5C-4912-A3D1-CAB3C0641FFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infra", "3 - Infra", "{01C0F97F-4230-455A-A527-60ACCACF2BFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 - Data", "3.1 - Data", "{FFE1C0BF-BD92-47B4-9ADC-F6B1233BB64E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2 - CrossCutting", "3.2 - CrossCutting", "{EF296C6C-CE31-4460-96C2-2B9CDFF930BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{45A3BE37-E3DA-4A83-9099-C12E07C9C352} = {D1854770-29FB-4A7E-B832-1F2EEDFD4786}
+		{FFE1C0BF-BD92-47B4-9ADC-F6B1233BB64E} = {01C0F97F-4230-455A-A527-60ACCACF2BFD}
+		{EF296C6C-CE31-4460-96C2-2B9CDFF930BC} = {01C0F97F-4230-455A-A527-60ACCACF2BFD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80EDF3A7-8AD4-4516-976F-E932AAABC1EA}
