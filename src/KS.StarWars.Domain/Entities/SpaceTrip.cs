@@ -33,6 +33,6 @@ namespace KS.StarWars.Domain.Entities
             throw new System.NotImplementedException();
         }
 
-        public ValidationResult ValidationResult => throw new System.NotImplementedException();
+        public ValidationResult ValidationResult { get; private set; }
     }
 }
