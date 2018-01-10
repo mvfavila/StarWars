@@ -34,7 +34,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\SpaceTrip.cs" />
+    <Compile Include="Interfaces\Validation\ISelfValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjects\ValidationError.cs" />
+    <Compile Include="ValueObjects\ValidationResult.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,9 +1,12 @@
-﻿namespace KS.StarWars.Domain.Entities
+﻿using KS.StarWars.Domain.Interfaces.Validation;
+using KS.StarWars.Domain.ValueObjects;
+
+namespace KS.StarWars.Domain.Entities
 {
     /// <summary>
     /// Trip travelled by a StarWars spaceship.
     /// </summary>
-    public class SpaceTrip
+    public class SpaceTrip : ISelfValidator
     {
         private SpaceTrip(decimal distance)
         {
@@ -24,5 +27,12 @@
         {
             return new SpaceTrip(distance);
         }
+
+        public bool IsValid()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public ValidationResult ValidationResult => throw new System.NotImplementedException();
     }
 }
