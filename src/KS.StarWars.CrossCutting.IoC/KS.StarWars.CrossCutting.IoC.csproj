@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{45A3BE37-E3DA-4A83-9099-C12E07C9C352}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>KS.StarWars.Presentation.UI.MainConsoleApp</RootNamespace>
-    <AssemblyName>KS.StarWars.Presentation.UI.MainConsoleApp</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ProjectGuid>{6E8E1239-0497-4D0C-9199-1970686268E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KS.StarWars.CrossCutting.IoC</RootNamespace>
+    <AssemblyName>KS.StarWars.CrossCutting.IoC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -45,11 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StarWarsDependencyInjenction.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -57,9 +54,9 @@
       <Project>{2F8911B5-BD1D-4DFD-88D1-A3530357BB35}</Project>
       <Name>KS.StarWars.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KS.StarWars.CrossCutting.IoC\KS.StarWars.CrossCutting.IoC.csproj">
-      <Project>{6E8E1239-0497-4D0C-9199-1970686268E4}</Project>
-      <Name>KS.StarWars.CrossCutting.IoC</Name>
+    <ProjectReference Include="..\KS.StarWars.Data\KS.StarWars.Data.csproj">
+      <Project>{75EBC441-124C-41D5-8C3B-8F04ACF9C394}</Project>
+      <Name>KS.StarWars.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\KS.StarWars.Domain\KS.StarWars.Domain.csproj">
       <Project>{CFB93BDF-575A-4E43-88D3-97A2BAACFA6D}</Project>

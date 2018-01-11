@@ -13,7 +13,7 @@ namespace KS.StarWars.Domain.Entities
         public SpaceTrip(string distance)
         {
             Distance = distance;
-            ResuplyStops = new Dictionary<string, int>();
+            ResuplyStops = new Dictionary<string, string>();
         }
 
         /// <summary>
@@ -33,14 +33,14 @@ namespace KS.StarWars.Domain.Entities
         /// <summary>
         /// Collection of quantity of resuply stops planned for each starship.
         /// </summary>
-        public Dictionary<string, int> ResuplyStops { get; private set; }
+        public Dictionary<string, string> ResuplyStops { get; private set; }
 
         /// <summary>
         /// Add a Resuply Stops Entry for a Starship.
         /// </summary>
         /// <param name="name">Name of the Starship.</param>
         /// <param name="stops">Number of resuply stops planned.</param>
-        public void AddResuplyStop(string name, int stops)
+        public void AddResuplyStop(string name, string stops)
         {
             ResuplyStops.Add(name, stops);
         }

@@ -15,7 +15,7 @@ namespace KS.StarWars.Application.AppService
             this.starlogService = starlogService;
         }
 
-        public Dictionary<string, int> GetAllResuplyStopsForSpaceTrip(SpaceTrip spaceTrip)
+        public Dictionary<string, string> GetAllResuplyStopsForSpaceTrip(SpaceTrip spaceTrip)
         {
             var starships = GetAllStarships();
 
@@ -26,14 +26,18 @@ namespace KS.StarWars.Application.AppService
 
         private static void ComputeSpacetripResuplyStops(SpaceTrip spaceTrip, IEnumerable<Starship> starships)
         {
-            var existingLog = new Dictionary<decimal, int>();
+            var existingLog = new Dictionary<decimal, string>();
 
             foreach (var starship in starships)
             {
-                var speed = decimal.Parse(starship.Mglt);
+                if (!IsMgltNumeric(starship, out decimal speed))
+                {
+                    AddUnknownResultMessage(spaceTrip, starship);
+                    continue;
+                }
 
-                int numberOfStops;
-                
+                string numberOfStops;
+
                 if (IsNumberOfStopsAlreadyComputed(existingLog, speed))
                 {
                     numberOfStops = existingLog[speed];
@@ -48,12 +52,22 @@ namespace KS.StarWars.Application.AppService
             }
         }
 
-        private static int ComputeStops(decimal speed, SpaceTrip spaceTrip)
+        private static void AddUnknownResultMessage(SpaceTrip spaceTrip, Starship starship)
         {
-            return int.Parse(Math.Ceiling(spaceTrip.GetDistance() / speed).ToString());
+            spaceTrip.AddResuplyStop(starship.Name, "Not possible to compute (MGLT = 'Unknown')");
         }
 
-        private static bool IsNumberOfStopsAlreadyComputed(Dictionary<decimal, int> existingLog, decimal speed)
+        private static bool IsMgltNumeric(Starship starship, out decimal speed)
+        {
+            return decimal.TryParse(starship.Mglt, out speed);
+        }
+
+        private static string ComputeStops(decimal speed, SpaceTrip spaceTrip)
+        {
+            return int.Parse(Math.Ceiling(spaceTrip.GetDistance() / speed).ToString()).ToString();
+        }
+
+        private static bool IsNumberOfStopsAlreadyComputed(Dictionary<decimal, string> existingLog, decimal speed)
         {
             return existingLog.ContainsKey(speed);
         }
@@ -67,7 +81,8 @@ namespace KS.StarWars.Application.AppService
             {
                 var starlogPage = starlogService.GetStarshipsByPage(page++);
                 next = starlogPage.Next;
-                starships.AddRange(starlogPage.Starships);
+                if(starlogPage.Results != null)
+                    starships.AddRange(starlogPage.Results);
             }
 
             return starships;

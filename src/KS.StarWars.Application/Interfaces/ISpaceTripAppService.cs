@@ -6,6 +6,6 @@ namespace KS.StarWars.Application.Interfaces
 {
     public interface ISpaceTripAppService : IDisposable
     {
-        Dictionary<string, int> GetAllResuplyStopsForSpaceTrip(SpaceTrip spaceTrip);
+        Dictionary<string, string> GetAllResuplyStopsForSpaceTrip(SpaceTrip spaceTrip);
     }
 }

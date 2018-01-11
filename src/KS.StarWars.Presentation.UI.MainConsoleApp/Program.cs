@@ -1,6 +1,8 @@
 ﻿using KS.StarWars.Application.Interfaces;
+using KS.StarWars.CrossCutting.IoC;
 using KS.StarWars.Domain.Entities;
 using KS.StarWars.Domain.ValueObjects;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
 
@@ -9,6 +11,12 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
     class Program
     {
         private static readonly ISpaceTripAppService spaceTripAppService;
+
+        static Program()
+        {
+            StarWarsDependencyInjenction.RegisterServices();
+            spaceTripAppService = StarWarsDependencyInjenction.container.GetInstance<ISpaceTripAppService>();
+        }
 
         static void Main(string[] args)
         {
@@ -88,12 +96,17 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
             }
         }
 
-        private static void ShowResult(Dictionary<string, int> resuplyStops)
+        private static void ShowResult(Dictionary<string, string> resuplyStops)
         {
             foreach (var stop in resuplyStops)
             {
                 Console.WriteLine($"{stop.Key}: {stop.Value}");
             }
+        }
+
+        private static void Initialize()
+        {
+            
         }
     }
 }
