@@ -41,23 +41,13 @@ namespace KS.StarWars.Data.HttpRest
             var request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = requestMethod.ToCode();
 
-            VerifyProxy(request);
+            if (request.Proxy != null)
+            {
+                request.UseDefaultCredentials = true;
+                request.Proxy = new WebProxy();
+            }
 
             return request;
-        }
-
-        private static void VerifyProxy(HttpWebRequest request)
-        {
-            var proxy = request.Proxy;
-            if (proxy != null)
-            {
-                var proxyuri = proxy.GetProxy(request.RequestUri).ToString();
-                request.UseDefaultCredentials = true;
-                request.Proxy = new WebProxy(proxyuri, false)
-                {
-                    Credentials = CredentialCache.DefaultCredentials
-                };
-            }
         }
 
         private void AttachResourceToUrl(StringBuilder fullUrl, string resource)

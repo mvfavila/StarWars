@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.StarWars.Domain.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.StarWars.Data", "src\KS.StarWars.Data\KS.StarWars.Data.csproj", "{75EBC441-124C-41D5-8C3B-8F04ACF9C394}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.StarWars.Data.Tests", "src\KS.StarWars.Data.Tests\KS.StarWars.Data.Tests.csproj", "{8832E8AD-BF70-43F3-886C-AA2283DF8FB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{75EBC441-124C-41D5-8C3B-8F04ACF9C394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75EBC441-124C-41D5-8C3B-8F04ACF9C394}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75EBC441-124C-41D5-8C3B-8F04ACF9C394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8832E8AD-BF70-43F3-886C-AA2283DF8FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8832E8AD-BF70-43F3-886C-AA2283DF8FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8832E8AD-BF70-43F3-886C-AA2283DF8FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8832E8AD-BF70-43F3-886C-AA2283DF8FB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{CFB93BDF-575A-4E43-88D3-97A2BAACFA6D} = {5B68F598-7F5C-4912-A3D1-CAB3C0641FFE}
 		{9B99A91B-A77E-4AF7-A86D-F7E89A392A05} = {5B68F598-7F5C-4912-A3D1-CAB3C0641FFE}
 		{75EBC441-124C-41D5-8C3B-8F04ACF9C394} = {FFE1C0BF-BD92-47B4-9ADC-F6B1233BB64E}
+		{8832E8AD-BF70-43F3-886C-AA2283DF8FB3} = {FFE1C0BF-BD92-47B4-9ADC-F6B1233BB64E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80EDF3A7-8AD4-4516-976F-E932AAABC1EA}
