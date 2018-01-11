@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace KS.StarWars.Domain.Entities
 {
     [DataContract(Name = "starship")]
-    public class Starship
+    public class StarShip
     {
         [DataMember(Name = "name")]
         public string Name { get; set; }

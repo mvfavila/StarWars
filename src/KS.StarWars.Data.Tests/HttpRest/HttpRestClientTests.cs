@@ -6,7 +6,7 @@ namespace KS.StarWars.Data.Tests.HttpRest
 {
     public class HttpRestClientTests
     {
-        [Fact(DisplayName = "Most be not null response")]
+        [Fact(DisplayName = "Must be not null response")]
         [Trait(nameof(HttpRestClient), "Consume service")]
         public void HttpRestClient_Service_MustBeNotNullResponse()
         {
@@ -20,7 +20,7 @@ namespace KS.StarWars.Data.Tests.HttpRest
             Assert.NotNull(response);
         }
 
-        [Fact(DisplayName = "Most return Not Found Exception")]
+        [Fact(DisplayName = "Must return Not Found Exception")]
         [Trait(nameof(HttpRestClient), "Consume service")]
         public void HttpRestClient_Service_MustReturnNotFound()
         {

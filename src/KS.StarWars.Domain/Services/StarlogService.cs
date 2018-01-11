@@ -11,6 +11,9 @@ namespace KS.StarWars.Domain.Services
 
         public StarlogService(IStarlogPageReadOnlyRepository starlogPageReadOnlyRepository)
         {
+            if (starlogPageReadOnlyRepository == null)
+                throw new ArgumentNullException(nameof(starlogPageReadOnlyRepository));
+
             this.starlogPageReadOnlyRepository = starlogPageReadOnlyRepository;
         }
 

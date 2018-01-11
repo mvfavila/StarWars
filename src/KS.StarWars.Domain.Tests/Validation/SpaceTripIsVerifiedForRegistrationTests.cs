@@ -8,7 +8,7 @@ namespace KS.StarWars.Domain.Tests.Validation
     public class SpaceTripIsVerifiedForRegistrationTests
     {
         /// <summary>
-        /// Tests the SpaceShip validation (1 million instances)
+        /// Tests the SpaceShip validation (100 thousand instances)
         /// </summary>
         [Fact(DisplayName = "Valid instance")]
         [Trait(nameof(SpaceTrip), nameof(Validation))]
@@ -18,7 +18,7 @@ namespace KS.StarWars.Domain.Tests.Validation
             var spaceTrips = new Faker<SpaceTrip>()
                 .CustomInstantiator(s => new SpaceTrip(
                     s.Random.Decimal(0.0M, decimal.MaxValue).ToString()
-                    )).Generate(1000000);
+                    )).Generate(100000);
 
             // Act
             spaceTrips.ForEach(s => s.IsValid());
@@ -28,14 +28,14 @@ namespace KS.StarWars.Domain.Tests.Validation
         }
 
         /// <summary>
-        /// Tests the SpaceShip validation with negative values (1 million instances)
+        /// Tests the SpaceShip validation with negative values (1 thousand instances)
         /// </summary>
         [Fact(DisplayName = "Distance can not be negative")]
         [Trait(nameof(SpaceTrip), nameof(Validation))]
         public void SpaceTrip_Validation_DistanceMustBeNonNegative()
         {
             // Arrange
-            const int NUMBER_OF_INSTANCES = 1000000;
+            const int NUMBER_OF_INSTANCES = 1000;
             var spaceTrips = new Faker<SpaceTrip>()
                 .CustomInstantiator(s => new SpaceTrip(
                     s.Random.Decimal(decimal.MinValue, -0.00000000001M).ToString()

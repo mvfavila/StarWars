@@ -24,15 +24,15 @@ namespace KS.StarWars.Data.Repositories.Starship
             this.httpRestClient = httpRestClient;
         }
 
-        public IEnumerable<Domain.Entities.Starship> GetAll()
+        public IEnumerable<Domain.Entities.StarShip> GetAll()
         {
             var response = httpRestClient.Get(resource);
 
             var responseContent = HttpRestClientHelper.GetResultStreamAsString(response);
 
-            var starships = jsonSerializer.Deserialize<IEnumerable<Domain.Entities.Starship>>(responseContent);
+            var starShips = jsonSerializer.Deserialize<IEnumerable<Domain.Entities.StarShip>>(responseContent);
 
-            return starships;
+            return starShips;
         }
     }
 }

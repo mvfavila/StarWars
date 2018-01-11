@@ -11,7 +11,7 @@ namespace KS.StarWars.Domain.Interfaces.Repository.ReadOnly
         /// <summary>
         /// Get all starships.
         /// </summary>
-        /// <returns>Collection of <see cref="Starship"/>.</returns>
-        IEnumerable<Starship> GetAll();
+        /// <returns>Collection of <see cref="StarShip"/>.</returns>
+        IEnumerable<StarShip> GetAll();
     }
 }

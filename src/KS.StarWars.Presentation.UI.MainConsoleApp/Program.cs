@@ -2,13 +2,19 @@
 using KS.StarWars.CrossCutting.IoC;
 using KS.StarWars.Domain.Entities;
 using KS.StarWars.Domain.ValueObjects;
-using SimpleInjector;
 using System;
 using System.Collections.Generic;
 
 namespace KS.StarWars.Presentation.UI.MainConsoleApp
 {
-    class Program
+    /// <summary>
+    /// Main Program that executes the Console and prompts the user interaction messages.</br>
+    ///
+    /// I decided to leave the messages and interaction methods in this class so I do not take too long</br>
+    /// to finish the challenge and because all the methods are related to this kind of UI</br>
+    /// and would not be used by a different kind of UI.
+    /// </summary>
+    static class Program
     {
         private static readonly ISpaceTripAppService spaceTripAppService;
 
@@ -18,42 +24,62 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
             spaceTripAppService = StarWarsDependencyInjenction.container.GetInstance<ISpaceTripAppService>();
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
-            PlanTripStops();
+            Start();
         }
 
-        private static void PlanTripStops()
+        private static void Start()
         {
             PrintPresentation();
 
+            Execute();
+        }
+
+        private static void Execute()
+        {
             while (true)
             {
                 PrintHelpMessages();
                 var command = RequestCommand();
-                while (string.IsNullOrEmpty(command) || string.IsNullOrWhiteSpace(command))
-                {
-                    command = RequestCommand();
-                }
+                command = RequestValidCommand(command);
+
                 if (IsExitProgramRequested(command))
                     break;
 
                 var spaceTrip = new SpaceTrip(command);
 
-                if (!IsDistanceNumeric(command))
-                {
-                    ShowInvalidEntryMessage();
-                }
-                else if (!spaceTrip.IsValid())
-                {
-                    ShowErros(spaceTrip.ValidationResult);
-                }
-                else
-                {
-                    var resuplyStops = spaceTripAppService.GetAllResuplyStopsForSpaceTrip(spaceTrip);
-                    ShowResult(resuplyStops);
-                }
+                ProcessSpaceTrip(command, spaceTrip);
             }
+        }
+
+        private static void ProcessSpaceTrip(string command, SpaceTrip spaceTrip)
+        {
+            if (!IsDistanceNumeric(command))
+            {
+                ShowInvalidEntryMessage();
+            }
+            else if (!spaceTrip.IsValid())
+            {
+                ShowErros(spaceTrip.ValidationResult);
+            }
+            else
+            {
+                var resuplyStops = spaceTripAppService.GetAllResuplyStopsForSpaceTrip(spaceTrip);
+                ShowResult(resuplyStops);
+            }
+        }
+
+        // Helper methods
+
+        private static string RequestValidCommand(string command)
+        {
+            while (string.IsNullOrEmpty(command) || string.IsNullOrWhiteSpace(command))
+            {
+                command = RequestCommand();
+            }
+
+            return command;
         }
 
         private static bool IsExitProgramRequested(string command)
@@ -70,6 +96,7 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
 
         private static void PrintHelpMessages()
         {
+            Console.WriteLine();
             Console.WriteLine("Type 'exit' and press ENTER to close R2-D2 travel log.");
         }
 
@@ -102,11 +129,6 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
             {
                 Console.WriteLine($"{stop.Key}: {stop.Value}");
             }
-        }
-
-        private static void Initialize()
-        {
-            
         }
     }
 }
