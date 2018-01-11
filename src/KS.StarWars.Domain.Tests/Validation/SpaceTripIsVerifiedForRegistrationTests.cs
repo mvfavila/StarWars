@@ -16,7 +16,7 @@ namespace KS.StarWars.Domain.Tests.Validation
         {
             // Arrange
             var spaceTrips = new Faker<SpaceTrip>()
-                .CustomInstantiator(s => SpaceTrip.FactoryTest(
+                .CustomInstantiator(s => new SpaceTrip(
                     s.Random.Decimal(0.0M, decimal.MaxValue)
                     )).Generate(1000000);
 
@@ -37,7 +37,7 @@ namespace KS.StarWars.Domain.Tests.Validation
             // Arrange
             const int NUMBER_OF_INSTANCES = 1000000;
             var spaceTrips = new Faker<SpaceTrip>()
-                .CustomInstantiator(s => SpaceTrip.FactoryTest(
+                .CustomInstantiator(s => new SpaceTrip(
                     s.Random.Decimal(decimal.MinValue, -0.00000000001M)
                     )).Generate(NUMBER_OF_INSTANCES);
 

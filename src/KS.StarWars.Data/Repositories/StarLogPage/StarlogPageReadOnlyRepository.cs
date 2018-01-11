@@ -1,13 +1,8 @@
-﻿using KS.StarWars.Data.Interfaces;
+﻿using KS.StarWars.Data.HttpRest;
+using KS.StarWars.Data.Interfaces;
 using KS.StarWars.Domain.Interfaces.Repository.ReadOnly;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Script.Serialization;
-using KS.StarWars.Domain.Entities;
-using KS.StarWars.Data.HttpRest;
 
 namespace KS.StarWars.Data.Repositories.StarLogPage
 {
@@ -39,6 +34,11 @@ namespace KS.StarWars.Data.Repositories.StarLogPage
             var starlogPage = jsonSerializer.Deserialize<Domain.Entities.StarLogPage>(responseContent);
 
             return starlogPage;
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿using System;
-using KS.StarWars.Domain.Interfaces.Validation;
-using KS.StarWars.Domain.ValueObjects;
+﻿using KS.StarWars.Domain.Interfaces.Validation;
 using KS.StarWars.Domain.Validation.SpaceTrip;
+using KS.StarWars.Domain.ValueObjects;
+using System.Collections.Generic;
 
 namespace KS.StarWars.Domain.Entities
 {
@@ -10,9 +10,10 @@ namespace KS.StarWars.Domain.Entities
     /// </summary>
     public class SpaceTrip : ISelfValidator
     {
-        private SpaceTrip(decimal distance)
+        public SpaceTrip(decimal distance)
         {
             Distance = distance;
+            ResuplyStops = new Dictionary<string, int>();
         }
 
         /// <summary>
@@ -21,23 +22,18 @@ namespace KS.StarWars.Domain.Entities
         public decimal Distance { get; private set; }
 
         /// <summary>
-        /// Factory to add a new Space Trip to the travel log.
+        /// Collection of quantity of resuply stops planned for each starship.
         /// </summary>
-        /// <param name="distance">Distance of the space trip.</param>
-        /// <returns>See <see cref="SpaceTrip"/>.</returns>
-        public static SpaceTrip FactoryAdd(decimal distance)
-        {
-            return new SpaceTrip(distance);
-        }
+        public Dictionary<string, int> ResuplyStops { get; private set; }
 
         /// <summary>
-        /// Factory to test Space Trip instance.
+        /// Add a Resuply Stops Entry for a Starship.
         /// </summary>
-        /// <param name="distance">Distance of the space trip.</param>
-        /// <returns>See <see cref="SpaceTrip"/>.</returns>
-        public static SpaceTrip FactoryTest(decimal distance)
+        /// <param name="name">Name of the Starship.</param>
+        /// <param name="stops">Number of resuply stops planned.</param>
+        public void AddResuplyStop(string name, int stops)
         {
-            return new SpaceTrip(distance);
+            ResuplyStops.Add(name, stops);
         }
 
         public bool IsValid()

@@ -16,6 +16,6 @@ namespace KS.StarWars.Domain.Entities
         public string Previous { get; set; }
 
         [DataMember(Name = "results")]
-        public IEnumerable<Starship> Results { get; set; }
+        public IEnumerable<Starship> Starships { get; set; }
     }
 }
