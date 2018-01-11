@@ -1,5 +1,7 @@
-﻿using KS.StarWars.Domain.Interfaces.Validation;
+﻿using System;
+using KS.StarWars.Domain.Interfaces.Validation;
 using KS.StarWars.Domain.ValueObjects;
+using KS.StarWars.Domain.Validation.SpaceTrip;
 
 namespace KS.StarWars.Domain.Entities
 {
@@ -28,9 +30,22 @@ namespace KS.StarWars.Domain.Entities
             return new SpaceTrip(distance);
         }
 
+        /// <summary>
+        /// Factory to test Space Trip instance.
+        /// </summary>
+        /// <param name="distance">Distance of the space trip.</param>
+        /// <returns>See <see cref="SpaceTrip"/>.</returns>
+        public static SpaceTrip FactoryTest(decimal distance)
+        {
+            return new SpaceTrip(distance);
+        }
+
         public bool IsValid()
         {
-            throw new System.NotImplementedException();
+            var validation = new SpaceTripIsVerifiedForRegistration();
+            ValidationResult = validation.Validate(this);
+
+            return ValidationResult.IsValid;
         }
 
         public ValidationResult ValidationResult { get; private set; }

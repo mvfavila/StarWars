@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace KS.StarWars.Domain.ValueObjects
 {
@@ -16,5 +17,10 @@ namespace KS.StarWars.Domain.ValueObjects
         public bool IsValid { get { return errors.Count == 0; } }
 
         public IEnumerable<ValidationError> Errors { get { return this.errors; } }
+
+        public void AddError(ValidationError error)
+        {
+            errors.Add(error);
+        }
     }
 }
