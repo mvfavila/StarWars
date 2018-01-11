@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.StarWars.Application", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.StarWars.CrossCutting.IoC", "src\KS.StarWars.CrossCutting.IoC\KS.StarWars.CrossCutting.IoC.csproj", "{6E8E1239-0497-4D0C-9199-1970686268E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.StarWars.Application.Tests", "src\KS.StarWars.Application.Tests\KS.StarWars.Application.Tests.csproj", "{5868DD94-903B-4302-B128-EAF660896B3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{6E8E1239-0497-4D0C-9199-1970686268E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E8E1239-0497-4D0C-9199-1970686268E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E8E1239-0497-4D0C-9199-1970686268E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5868DD94-903B-4302-B128-EAF660896B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5868DD94-903B-4302-B128-EAF660896B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5868DD94-903B-4302-B128-EAF660896B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5868DD94-903B-4302-B128-EAF660896B3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{8832E8AD-BF70-43F3-886C-AA2283DF8FB3} = {FFE1C0BF-BD92-47B4-9ADC-F6B1233BB64E}
 		{2F8911B5-BD1D-4DFD-88D1-A3530357BB35} = {546C781F-26EF-4E70-8E42-28CA967FE973}
 		{6E8E1239-0497-4D0C-9199-1970686268E4} = {EF296C6C-CE31-4460-96C2-2B9CDFF930BC}
+		{5868DD94-903B-4302-B128-EAF660896B3C} = {546C781F-26EF-4E70-8E42-28CA967FE973}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80EDF3A7-8AD4-4516-976F-E932AAABC1EA}
