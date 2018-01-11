@@ -45,6 +45,7 @@
     <Compile Include="HttpRest\HttpRestClientHelper.cs" />
     <Compile Include="Interfaces\IHttpRestClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\StarLogPage\StarlogPageReadOnlyRepository.cs" />
     <Compile Include="Repositories\Starship\StarshipReadOnlyRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,5 +54,6 @@
       <Name>KS.StarWars.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

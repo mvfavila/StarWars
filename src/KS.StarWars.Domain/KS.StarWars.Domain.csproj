@@ -34,8 +34,10 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\StarLogPage.cs" />
     <Compile Include="Entities\Starship.cs" />
     <Compile Include="Entities\SpaceTrip.cs" />
+    <Compile Include="Interfaces\Repository\ReadOnly\IStarlogPageReadOnlyRepository.cs" />
     <Compile Include="Interfaces\Repository\ReadOnly\IStarshipReadOnlyRepository.cs" />
     <Compile Include="Interfaces\Specification\ISpecification.cs" />
     <Compile Include="Interfaces\Validation\IRule.cs" />

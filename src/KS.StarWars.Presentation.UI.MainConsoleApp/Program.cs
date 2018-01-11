@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KS.StarWars.Data.HttpRest;
+using KS.StarWars.Data.Repositories.StarLogPage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +18,7 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
         private static void PlanTripStops()
         {
             Console.WriteLine("############# Welcome to R2-D2 travel log #############");
+
             while (true)
             {
                 Console.WriteLine(
