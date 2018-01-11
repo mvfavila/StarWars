@@ -1,4 +1,5 @@
-﻿using KS.StarWars.Domain.Validation.Base;
+﻿using KS.StarWars.Domain.Specification.SpaceTrip;
+using KS.StarWars.Domain.Validation.Base;
 
 namespace KS.StarWars.Domain.Validation.SpaceTrip
 {
@@ -6,7 +7,10 @@ namespace KS.StarWars.Domain.Validation.SpaceTrip
     {
         public SpaceTripIsVerifiedForRegistration()
         {
+            var isDistanceNonNegativeValue = new SpaceTripIsDistanceNonNegativeValue();
 
+            base.AddRule("IsDistanceNonNegativeValue", new Rule<Entities.SpaceTrip>(isDistanceNonNegativeValue,
+               $"{nameof(Entities.SpaceTrip.Distance)} can not be less than 0 (zero)"));
         }
     }
 }

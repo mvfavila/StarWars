@@ -20,5 +20,10 @@ namespace KS.StarWars.Domain.Validation.Base
 
             return result;
         }
+
+        protected virtual void AddRule(string ruleName, IRule<TEntity> rule)
+        {
+            validations.Add(ruleName, rule);
+        }
     }
 }

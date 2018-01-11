@@ -47,7 +47,8 @@ namespace KS.StarWars.Domain.Tests.Validation
             // Assert
             Assert.Empty(spaceTrips.Where(s => s.IsValid()));
             Assert.Equal(NUMBER_OF_INSTANCES, spaceTrips.Count(
-                s => s.ValidationResult.Message == "Distance can not be a negative value"));
+                s => s.ValidationResult.Errors.Select(
+                    e => e.Message == "Distance can not be less than 0(zero)").Any()));
         }
     }
 }
