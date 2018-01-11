@@ -49,6 +49,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KS.StarWars.Application\KS.StarWars.Application.csproj">
+      <Project>{2F8911B5-BD1D-4DFD-88D1-A3530357BB35}</Project>
+      <Name>KS.StarWars.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KS.StarWars.Domain\KS.StarWars.Domain.csproj">
       <Project>{CFB93BDF-575A-4E43-88D3-97A2BAACFA6D}</Project>
       <Name>KS.StarWars.Domain</Name>

@@ -50,7 +50,7 @@ namespace KS.StarWars.Application.AppService
 
         private static int ComputeStops(decimal speed, SpaceTrip spaceTrip)
         {
-            return int.Parse(Math.Ceiling(spaceTrip.Distance / speed).ToString());
+            return int.Parse(Math.Ceiling(spaceTrip.GetDistance() / speed).ToString());
         }
 
         private static bool IsNumberOfStopsAlreadyComputed(Dictionary<decimal, int> existingLog, decimal speed)

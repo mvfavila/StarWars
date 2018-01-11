@@ -10,7 +10,7 @@ namespace KS.StarWars.Domain.Entities
     /// </summary>
     public class SpaceTrip : ISelfValidator
     {
-        public SpaceTrip(decimal distance)
+        public SpaceTrip(string distance)
         {
             Distance = distance;
             ResuplyStops = new Dictionary<string, int>();
@@ -19,7 +19,16 @@ namespace KS.StarWars.Domain.Entities
         /// <summary>
         /// Distance of the space trip.
         /// </summary>
-        public decimal Distance { get; private set; }
+        internal string Distance { get; private set; }
+
+        /// <summary>
+        /// Get the decimal value of the SpaceTrip Distance.
+        /// </summary>
+        /// <returns>Distance.</returns>
+        public decimal GetDistance()
+        {
+            return decimal.Parse(Distance);
+        }
 
         /// <summary>
         /// Collection of quantity of resuply stops planned for each starship.
