@@ -1,3 +1,9 @@
+Note from the author: 
+	I did not use the SharpTrooper library because I was not sure if the goal of the code challenge was to use it or
+	to create my own REST Client, so I decided to go with the last option.
+
+############# R2-D2 Travel Log Instructions #############
+
 To execute the Console Application the project 'KS.StarWars.Presentation.UI.MainConsoleApp' must be the StartUp project.
 Run the application and follow the instructions.
 The innitial state looks like this:
@@ -12,7 +18,7 @@ The innitial state looks like this:
 
 To exit the application you can type the command 'exit' and press ENTER.
 To plan a new Space Trip please enter a distance and press ENTER.
-The application will compute the number of stops planned for each Star Ship and show the result.
+The application will compute the number of stops planned for each existing Star Ship and show the result.
 The result looks like this:
 
   ----------------------------------------------------------------
@@ -60,3 +66,4 @@ The result looks like this:
   |  CR90 corvette: 0                                            |
   |  Banking clan frigate: Not available (MGLT = 'Unknown')      |
   ----------------------------------------------------------------
+  
