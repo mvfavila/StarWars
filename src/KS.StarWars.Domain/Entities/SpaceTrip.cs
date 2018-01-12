@@ -42,7 +42,7 @@ namespace KS.StarWars.Domain.Entities
         /// <param name="mglt">Maximum speed travelled by a Star Ships in Mega Lights in 1(one) hour.</param>
         /// <param name="consumables">Consumables used by a Star Ship per hour.</param>
         /// <returns>Resupply Stops quantity.</returns>
-        public int GetResupplyStopsQuantity(decimal mglt, string consumables)
+        public decimal GetResupplyStopsQuantity(decimal mglt, string consumables)
         {
             var consumablesInHours = ConvertoToHours(consumables);
 
@@ -53,7 +53,7 @@ namespace KS.StarWars.Domain.Entities
 
             quocient = Truncate(quocient);
 
-            return int.Parse(quocient.ToString());
+            return decimal.Parse(quocient.ToString());
         }
 
         /// <summary>

@@ -55,9 +55,10 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
 
         private static void ProcessSpaceTrip(string command, SpaceTrip spaceTrip)
         {
-            if (!IsDistanceNumeric(command))
+            var message = string.Empty;
+            if (!IsValidEntry(command, out message))
             {
-                ShowInvalidEntryMessage();
+                ShowInvalidEntryMessage(message);
             }
             else if (!spaceTrip.IsValid())
             {
@@ -111,14 +112,31 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
             Console.WriteLine("############# Welcome to R2-D2 travel log #############");
         }
 
-        private static void ShowInvalidEntryMessage()
+        private static void ShowInvalidEntryMessage(string message)
         {
-            Console.WriteLine("Distance must be numeric");
+            Console.WriteLine();
+            Console.WriteLine(message);
         }
 
-        private static bool IsDistanceNumeric(string command)
+        private static bool IsValidEntry(string command, out string message)
         {
-            return decimal.TryParse(command, out decimal value);
+            message = string.Empty;
+            try
+            {
+                decimal.Parse(command);
+            }
+            catch (OverflowException)
+            {
+                message = "Distance value is too big";
+                return false;
+            }
+            catch (FormatException)
+            {
+                message = "Distance must be a valid decimal number";
+                return false;
+            }
+
+            return true;
         }
 
         private static void ShowErros(ValidationResult validationResult)

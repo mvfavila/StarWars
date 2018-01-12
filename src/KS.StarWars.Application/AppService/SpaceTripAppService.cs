@@ -27,6 +27,8 @@ namespace KS.StarWars.Application.AppService
             return spaceTrip.ResupplyStops;
         }
 
+        // Helper methods
+
         private static void ComputeSpacetripResupplyStops(SpaceTrip spaceTrip, IEnumerable<StarShip> starShips)
         {
             foreach (var starShip in starShips)
@@ -64,8 +66,17 @@ namespace KS.StarWars.Application.AppService
             {
                 return "Not available (consumables = 'unknown')";
             }
-            
-            return spaceTrip.GetResupplyStopsQuantity(mglt, consumables).ToString();
+
+            var result = spaceTrip.GetResupplyStopsQuantity(mglt, consumables);
+
+            return FormatResult(result);
+        }
+
+        private static string FormatResult(decimal result)
+        {
+            var value = result.ToString();
+
+            return value.Split('.')[0];
         }
 
         private IEnumerable<StarShip> GetAllStarships()

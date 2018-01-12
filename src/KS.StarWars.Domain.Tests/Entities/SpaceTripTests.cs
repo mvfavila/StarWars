@@ -99,5 +99,22 @@ namespace KS.StarWars.Domain.Tests.Entities
             // Assert
             Assert.Equal(EXPECTED_RESULT, resupplyStops);
         }
+
+        [Fact(DisplayName = "Distance = decimal.MaxValue must return value")]
+        [Trait(nameof(SpaceTrip), "Domain Service")]
+        public void SpaceTrip_GetResupplyStopsQuantityMaxDecimalDistance_Success()
+        {
+            // Arrange
+            var distance = decimal.MaxValue.ToString();
+            const decimal MGLT = 10.00000000001M;
+            const string CONSUMABLES = "10 years";
+            var spaceTrip = new SpaceTrip(distance);
+
+            // Act
+            var resupplyStops = spaceTrip.GetResupplyStopsQuantity(MGLT, CONSUMABLES);
+
+            // Assert
+            Assert.True(resupplyStops > 0);
+        }
     }
 }
