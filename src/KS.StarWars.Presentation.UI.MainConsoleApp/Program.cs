@@ -2,6 +2,7 @@
 using KS.StarWars.CrossCutting.IoC;
 using KS.StarWars.Domain.Entities;
 using KS.StarWars.Domain.ValueObjects;
+using KS.StarWars.Presentation.UI.MainConsoleApp.Shared;
 using System;
 using System.Collections.Generic;
 
@@ -16,6 +17,7 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
     /// </summary>
     static class Program
     {
+        private const string EXIT_COMMAND = "exit";
         private static readonly ISpaceTripAppService spaceTripAppService;
 
         static Program()
@@ -76,7 +78,7 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
 
         private static void PrintBB8HelpRequestMessage()
         {
-            Console.WriteLine("Requesting BB-8 help to plan resupply stops...");
+            Console.WriteLine(ConsoleMessages.INFO_REQUESTING_BB8_HELP);
         }
 
         private static string RequestValidCommand(string command)
@@ -91,12 +93,12 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
 
         private static bool IsExitProgramRequested(string command)
         {
-            return command.ToLower() == "exit";
+            return command.ToLower() == EXIT_COMMAND;
         }
 
         private static string RequestCommand()
         {
-            Console.Write("Please type the Space Trip distance: ");
+            Console.Write(ConsoleMessages.INFO_REQUEST_ENTRY_FROM_USER);
             var command = Console.ReadLine();
             return command;
         }
@@ -104,12 +106,12 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
         private static void PrintHelpMessages()
         {
             Console.WriteLine();
-            Console.WriteLine("Type 'exit' and press ENTER to close R2-D2 travel log.");
+            Console.WriteLine(ConsoleMessages.INFO_EXIT_HELP);
         }
 
         private static void PrintPresentation()
         {
-            Console.WriteLine("############# Welcome to R2-D2 travel log #############");
+            Console.WriteLine(ConsoleMessages.INFO_GREETINGS);
         }
 
         private static void ShowInvalidEntryMessage(string message)
@@ -127,12 +129,12 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
             }
             catch (OverflowException)
             {
-                message = "Distance value is too big";
+                message = ConsoleMessages.ERROR_VALUE_TOO_BIG;
                 return false;
             }
             catch (FormatException)
             {
-                message = "Distance must be a valid decimal number";
+                message = ConsoleMessages.ERROR_DISTANCE_MUST_BE_DECIMAL;
                 return false;
             }
 
