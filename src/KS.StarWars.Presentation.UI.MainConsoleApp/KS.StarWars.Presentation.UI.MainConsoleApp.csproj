@@ -62,7 +62,7 @@
       <Name>KS.StarWars.CrossCutting.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\KS.StarWars.Domain\KS.StarWars.Domain.csproj">
-      <Project>{CFB93BDF-575A-4E43-88D3-97A2BAACFA6D}</Project>
+      <Project>{cfb93bdf-575a-4e43-88d3-97a2baacfa6d}</Project>
       <Name>KS.StarWars.Domain</Name>
     </ProjectReference>
   </ItemGroup>

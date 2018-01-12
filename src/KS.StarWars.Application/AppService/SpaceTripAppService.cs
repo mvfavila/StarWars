@@ -18,16 +18,16 @@ namespace KS.StarWars.Application.AppService
             this.starlogService = starlogService;
         }
 
-        public Dictionary<string, string> GetAllResuplyStopsForSpaceTrip(SpaceTrip spaceTrip)
+        public Dictionary<string, string> GetAllResupplyStopsForSpaceTrip(SpaceTrip spaceTrip)
         {
             var starShips = GetAllStarships();
 
-             ComputeSpacetripResuplyStops(spaceTrip, starShips);
+             ComputeSpacetripResupplyStops(spaceTrip, starShips);
 
-            return spaceTrip.ResuplyStops;
+            return spaceTrip.ResupplyStops;
         }
 
-        private static void ComputeSpacetripResuplyStops(SpaceTrip spaceTrip, IEnumerable<StarShip> starShips)
+        private static void ComputeSpacetripResupplyStops(SpaceTrip spaceTrip, IEnumerable<StarShip> starShips)
         {
             var existingLog = new Dictionary<decimal, string>();
 
@@ -51,13 +51,13 @@ namespace KS.StarWars.Application.AppService
                     existingLog.Add(speed, numberOfStops);
                 }
 
-                spaceTrip.AddResuplyStop(starShip.Name, numberOfStops);
+                spaceTrip.AddResupplyStop(starShip.Name, numberOfStops);
             }
         }
 
         private static void AddUnknownResultMessage(SpaceTrip spaceTrip, StarShip starShip)
         {
-            spaceTrip.AddResuplyStop(starShip.Name, "Not available (MGLT = 'Unknown')");
+            spaceTrip.AddResupplyStop(starShip.Name, "Not available (MGLT = 'Unknown')");
         }
 
         private static bool IsMgltNumeric(StarShip starShip, out decimal speed)

@@ -71,11 +71,11 @@ namespace KS.StarWars.Application.Tests.AppService
                 .Returns(starLogPage);
 
             // Act
-            var resuplyStops = spaceTripAppService.GetAllResuplyStopsForSpaceTrip(spaceTrip);
+            var resupplyStops = spaceTripAppService.GetAllResupplyStopsForSpaceTrip(spaceTrip);
 
             // Assert
             starlogService.Verify(s => s.GetStarshipsByPage(It.IsAny<int>()), Times.Once());
-            Assert.Equal(int.Parse(starLogPage.Count), resuplyStops.Count);
+            Assert.Equal(int.Parse(starLogPage.Count), resupplyStops.Count);
         }
     }
 }

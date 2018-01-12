@@ -1,0 +1,62 @@
+To execute the Console Application the project 'KS.StarWars.Presentation.UI.MainConsoleApp' must be the StartUp project.
+Run the application and follow the instructions.
+The innitial state looks like this:
+
+  ----------------------------------------------------------------
+  |  ############# Welcome to R2-D2 travel log #############     |
+  |                                                              |
+  |  Type 'exit' and press ENTER to close R2-D2 travel log.      |
+  |  Please type the Space Trip distance:                        |
+  |                                                              |
+  ----------------------------------------------------------------
+
+To exit the application you can type the command 'exit' and press ENTER.
+To plan a new Space Trip please enter a distance and press ENTER.
+The application will compute the number of stops planned for each Star Ship and show the result.
+The result looks like this:
+
+  ----------------------------------------------------------------
+  |  ############# Welcome to R2-D2 travel log #############     |
+  |                                                              |
+  |  Type 'exit' and press ENTER to close R2-D2 travel log.      |
+  |  Please type the Space Trip distance: 1000000                |
+  |  Requesting BB-8 help to plan resupply stops...              |
+  |                                                              |
+  |  Executor: 0                                                 |
+  |  Sentinel-class landing craft: 19                            |
+  |  Death Star: 3                                               |
+  |  Millennium Falcon: 9                                        |
+  |  Y-wing: 74                                                  |
+  |  X-wing: 59                                                  |
+  |  TIE Advanced x1: 79                                         |
+  |  Slave 1: 19                                                 |
+  |  Imperial shuttle: 13                                        |
+  |  EF76 Nebulon-B escort frigate: 0                            |
+  |  Calamari Cruiser: 0                                         |
+  |  A-wing: 49                                                  |
+  |  B-wing: 65                                                  |
+  |  Republic Cruiser: Not available (MGLT = 'Unknown')          |
+  |  Naboo fighter: Not available (MGLT = 'Unknown')             |
+  |  Naboo Royal Starship: Not available (MGLT = 'Unknown')      |
+  |  Scimitar: Not available (MGLT = 'Unknown')                  |
+  |  J-type diplomatic barge: Not available (MGLT = 'Unknown')   |
+  |  AA-9 Coruscant freighter: Not available (MGLT = 'Unknown')  |
+  |  Jedi starfighter: Not available (MGLT = 'Unknown')          |
+  |  H-type Nubian yacht: Not available (MGLT = 'Unknown')       |
+  |  Star Destroyer: 0                                           |
+  |  Trade Federation cruiser: Not available (MGLT = 'Unknown')  |
+  |  Theta-class T-2c shuttle: Not available (MGLT = 'Unknown')  |
+  |  T-70 X-wing fighter: Not available (MGLT = 'Unknown')       |
+  |  Rebel transport: 11                                         |
+  |  Droid control ship: Not available (MGLT = 'Unknown')        |
+  |  Republic Assault ship: Not available (MGLT = 'Unknown')     |
+  |  Solar Sailer: Not available (MGLT = 'Unknown')              |
+  |  Republic attack cruiser: Not available (MGLT = 'Unknown')   |
+  |  Naboo star skiff: Not available (MGLT = 'Unknown')          |
+  |  Jedi Interceptor: Not available (MGLT = 'Unknown')          |
+  |  arc-170: 59                                                 |
+  |  Belbullab-22 starfighter: Not available (MGLT = 'Unknown')  |
+  |  V-wing: Not available (MGLT = 'Unknown')                    |
+  |  CR90 corvette: 0                                            |
+  |  Banking clan frigate: Not available (MGLT = 'Unknown')      |
+  ----------------------------------------------------------------
