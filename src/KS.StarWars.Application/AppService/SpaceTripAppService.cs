@@ -29,8 +29,6 @@ namespace KS.StarWars.Application.AppService
 
         private static void ComputeSpacetripResupplyStops(SpaceTrip spaceTrip, IEnumerable<StarShip> starShips)
         {
-            var existingLog = new Dictionary<decimal, string>();
-
             foreach (var starShip in starShips)
             {
                 if (!IsMgltNumeric(starShip, out decimal speed))
@@ -39,17 +37,7 @@ namespace KS.StarWars.Application.AppService
                     continue;
                 }
 
-                string numberOfStops;
-
-                if (IsNumberOfStopsAlreadyComputed(existingLog, speed))
-                {
-                    numberOfStops = existingLog[speed];
-                }
-                else
-                {
-                    numberOfStops = ComputeStops(starShip, spaceTrip);
-                    existingLog.Add(speed, numberOfStops);
-                }
+                var numberOfStops = ComputeStops(starShip, spaceTrip);
 
                 spaceTrip.AddResupplyStop(starShip.Name, numberOfStops);
             }
@@ -78,11 +66,6 @@ namespace KS.StarWars.Application.AppService
             }
             
             return spaceTrip.GetResupplyStopsQuantity(mglt, consumables).ToString();
-        }
-
-        private static bool IsNumberOfStopsAlreadyComputed(Dictionary<decimal, string> existingLog, decimal speed)
-        {
-            return existingLog.ContainsKey(speed);
         }
 
         private IEnumerable<StarShip> GetAllStarships()
