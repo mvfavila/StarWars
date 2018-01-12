@@ -65,12 +65,18 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
             }
             else
             {
+                PrintBB8HelpRequestMessage();
                 var resuplyStops = spaceTripAppService.GetAllResuplyStopsForSpaceTrip(spaceTrip);
                 ShowResult(resuplyStops);
             }
         }
 
         // Helper methods
+
+        private static void PrintBB8HelpRequestMessage()
+        {
+            Console.WriteLine("Requesting BB-8 help to plan resuply stops...");
+        }
 
         private static string RequestValidCommand(string command)
         {
@@ -117,6 +123,7 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
 
         private static void ShowErros(ValidationResult validationResult)
         {
+            Console.WriteLine();
             foreach (var error in validationResult.Errors)
             {
                 Console.WriteLine(error.Message);
@@ -125,6 +132,7 @@ namespace KS.StarWars.Presentation.UI.MainConsoleApp
 
         private static void ShowResult(Dictionary<string, string> resuplyStops)
         {
+            Console.WriteLine();
             foreach (var stop in resuplyStops)
             {
                 Console.WriteLine($"{stop.Key}: {stop.Value}");
