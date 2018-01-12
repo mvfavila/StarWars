@@ -35,7 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\StarLogPage.cs" />
-    <Compile Include="Entities\Starship.cs" />
+    <Compile Include="Entities\StarShip.cs" />
     <Compile Include="Entities\SpaceTrip.cs" />
     <Compile Include="Interfaces\Repository\ReadOnly\IStarlogPageReadOnlyRepository.cs" />
     <Compile Include="Interfaces\Repository\ReadOnly\IStarshipReadOnlyRepository.cs" />
