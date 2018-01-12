@@ -76,55 +76,8 @@ namespace KS.StarWars.Application.AppService
             {
                 return "Not available (consumables = 'unknown')";
             }
-            var consumablesInHours = ConvertoToHours(consumables);
-
-            var dividend = spaceTrip.GetDistance();
-            var divisor = mglt * consumablesInHours;
-
-            return int.Parse(Math.Truncate(dividend / divisor).ToString()).ToString();
-        }
-
-        private static decimal ConvertoToHours(string consumables)
-        {
-            const int ONE_HOUR = 1;
-            const int HOURS_IN_ONE_DAY = 24;
-            const int HOURS_IN_ONE_WEEK = 24 * 7;
-            const int HOURS_IN_ONE_MONTH = 24 * 30;
-            const int HOURS_IN_ONE_YEAR = 24 * 30 * 12;
-
-
-            var data = consumables.Split(' ');
-            var number = decimal.Parse(data[0]);
-            var unit = data[1].ToLower();
-
-            var amountOfHoursPerUnit = 1;
-
-            switch (unit)
-            {
-                case "day":
-                case "days":
-                    amountOfHoursPerUnit = HOURS_IN_ONE_DAY;
-                    break;
-                case "week":
-                case "weeks":
-                    amountOfHoursPerUnit = HOURS_IN_ONE_WEEK;
-                    break;
-                case "month":
-                case "months":
-                    amountOfHoursPerUnit = HOURS_IN_ONE_MONTH;
-                    break;
-                case "year":
-                case "years":
-                    amountOfHoursPerUnit = HOURS_IN_ONE_YEAR;
-                    break;
-                default:
-                    amountOfHoursPerUnit = ONE_HOUR;
-                    break;
-            }
-
-            var result = number * amountOfHoursPerUnit;
-
-            return result;
+            
+            return spaceTrip.GetResupplyStopsQuantity(mglt, consumables).ToString();
         }
 
         private static bool IsNumberOfStopsAlreadyComputed(Dictionary<decimal, string> existingLog, decimal speed)

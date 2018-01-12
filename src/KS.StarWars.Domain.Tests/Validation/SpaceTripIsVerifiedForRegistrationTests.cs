@@ -8,7 +8,7 @@ namespace KS.StarWars.Domain.Tests.Validation
     public class SpaceTripIsVerifiedForRegistrationTests
     {
         /// <summary>
-        /// Tests the SpaceShip validation (100 thousand instances)
+        /// Tests the SpaceShip validation (one hundred thousand instances)
         /// </summary>
         [Fact(DisplayName = "Valid instance")]
         [Trait(nameof(SpaceTrip), nameof(Validation))]
